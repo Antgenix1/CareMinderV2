@@ -9,12 +9,16 @@ import { postChatMessage, getChatMessages } from "src/lib/api";
 
 import "./Request.css";
 
-export default function Request({ request, session, from_patient, is_staff }) {
+export default function Request({
+  request,
+  session,
+  from_patient,
+  handleNotificationCountChange,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const isOpenRef = useRef(isOpen);
   const [messageText, setMessageText] = useState("");
   const [chat, setChat] = useState([]);
-  const [area, setArea] = useState("");
 
   const [newMessageCount, setNewMessageCount] = useState(0);
   const [prevCount, setPrevCount] = useState(0);
@@ -27,14 +31,19 @@ export default function Request({ request, session, from_patient, is_staff }) {
     fetchChatMessages();
   }, [request]);
 
+  useEffect(() => {
+    if (!handleNotificationCountChange) return;
+    handleNotificationCountChange(newMessageCount);
+  }, [newMessageCount]);
+
   async function fetchChatMessages() {
     if (!request.id) return;
     try {
       const resp = await getChatMessages(session, request.id);
-      const chatLength = chat.filter(message => {
-        return message.from_patient === is_staff;
+      const chatLength = chat.filter((message) => {
+        return message.from_patient === !from_patient;
       }).length;
-      if (prevCount !== chatLength && !isOpen){
+      if (prevCount !== chatLength && !isOpen) {
         setPrevCount(chatLength);
         setNewMessageCount((newMessageCount) => newMessageCount + 1);
       }
@@ -102,7 +111,9 @@ export default function Request({ request, session, from_patient, is_staff }) {
         <div className="content-container">
           <div className="info-container">
             <h2>
-              {from_patient ? getStateText(request.state) : request?.area?.name}
+              {from_patient
+                ? getStateText(request.state)
+                : request?.area?.name || "Unknown Area"}
             </h2>
             <p className="time">{timeAgo(request.time)}</p>
           </div>

@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-import ViewRequest from "./viewRequest/viewRequest";
-import Progress from "./progress/progress";
+import ViewRequest from "./ViewRequest/ViewRequest";
+import Progress from "./Progress/Progress";
 import NurseHeader from "src/components/NurseHeader/NurseHeader";
 
-import styles from "./Requests.module.css";
-import { useRedirectToLogin } from "../../../../hooks/useSession";
+import styles from "./Home.module.css";
+import { useRedirectToLogin } from "src/hooks/useSession";
 
-import data from "../../../../data.json";
+import data from "src/data.json";
 
-export default function Requests({ session }) {
+export default function Home({ session }) {
   useRedirectToLogin(session, "/nurse/login");
   const nurse = data.nurse;
 

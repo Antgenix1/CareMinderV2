@@ -1,8 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import NurseHomeRequests from "src/pages/Nurse/Home/Requests/Requests";
-import NurseHomePatients from "src/pages/Nurse/Home/Patients/Patients";
+import NurseHomeRequests from "src/pages/Nurse/Home/Home";
 import Settings from "src/pages/Nurse/Admin/Settings/Settings";
 import AddUser from "src/pages/Nurse/Admin/AddUser/AddUser";
 import EditUser from "src/pages/Nurse/Admin/EditUser/EditUser";
@@ -22,7 +21,7 @@ import "src/theme/variables.css";
 import NurseLogin from "src/pages/Nurse/Login/Login";
 import AddArea from "../Nurse/Admin/AddArea/AddArea";
 import EditArea from "../Nurse/Admin/EditArea/EditArea";
-import CompletedPatientRequests from "../Nurse/Home/CompletedPatientRequest/CompletedPatientRequests";
+import CompletedRequests from "../Nurse/CompletedRequest/CompletedRequests";
 
 function App() {
   const session = useSession();
@@ -46,11 +45,7 @@ function App() {
         />
         <Route
           path="/nurse/home/completedRequests"
-          element={<CompletedPatientRequests session={session} />}
-        />
-        <Route
-          path="/nurse/home/patients"
-          element={<NurseHomePatients session={session} />}
+          element={<CompletedRequests session={session} />}
         />
         <Route
           path="/nurse/admin/settings"
@@ -102,7 +97,7 @@ function App() {
           element={<Recording session={session} />}
         />
         <Route
-          path="/patient/recordingResults"
+          path="/patient/recording/result"
           element={<RecordingResult session={session} />}
         />
       </Routes>
