@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django_filters",
     "rest_framework",
     "corsheaders",
-    "django_extensions",
     "patient",
     "staff",
     "request",
@@ -137,11 +136,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-GRAPH_MODELS = {
-    "all_applications": True,
-    "graph_models": True,
-}
-
 AUTH_USER_MODEL = "staff.Staff"
 
 REST_FRAMEWORK = {
@@ -150,6 +144,7 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ],
 }
 

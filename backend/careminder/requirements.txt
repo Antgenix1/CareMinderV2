@@ -2,6 +2,4 @@ django
 djangorestframework-simplejwt
 django-cors-headers
 django-filter
-django_extensions
 djangorestframework
-django_filter
