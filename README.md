@@ -47,7 +47,7 @@ To get started with CareMinder, follow these installation steps:
    ```
    git clone https://github.com/your-username/careminder.git
    ```
-
+ 
 2. Follow the installation instructions in the [Installation Guide](./docs/installation.md) for both the patient app and the hospital system.
 
 ## Usage
