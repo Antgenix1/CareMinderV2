@@ -184,8 +184,8 @@ export async function getTablets() {
   return data;
 }
 
-export async function getTablet(session, id) {
-  const response = await authFetch(session, `${BASE_URL}/tablets/${id}`, {
+export async function getTablet(id) {
+  const response = await fetch(`${BASE_URL}/tablets/${id}`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
