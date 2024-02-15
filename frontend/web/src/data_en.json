@@ -1,5 +1,6 @@
 {
   "patient": {
+    "recordingLang": "en",
     "agreementConsentHeader": "Agreement of the terms and conditions",
     "consentToCollectionHeader": "[Consent to collect personal information]",
     "consentToCollectionText": "To use this service, the information subject's separate consent to collect information is required. The type of information you collect is limited to anonymized requests and feedback data. If you do not agree to collect information, your use of the service will be restricted.",
@@ -57,6 +58,7 @@
     "nurseLoginInStatusSuccess": "Login Successful",
     "nurseLoginInStatusError": "Login Failed",
     "nurseLoginInStatusToManyAttempts": "Too Many Attempts",
+    "nurseLoginInStatusLoading": "Loading",
     "nurseLogin": "Login",
 
     "nurseHeaderBack": "Back",
@@ -113,7 +115,6 @@
     "editAreaHeader": "Edit Area",
     "editTabletHeader": "Edit Tablet",
 
-
     "editButtonsSave": "Save",
     "editButtonsSaveAndAddAnother": "Save and add another",
     "editButtonsSaveAndReturn": "Save and return",
@@ -129,10 +130,9 @@
     "nurseSideBarUserInfo": "Query user Information",
     "nurseSideBarSettings": "Configuration Settings",
 
-    "completedPatientRequests": "Completed patient requests",
-    "completedPatientTime": "Time",
-    "completedPatientClassification": "Classification",
-    "completedPatientRequestDetails": "Request Details"
-
+    "completedRequests": "Completed patient requests",
+    "completedTime": "Time",
+    "completedClassification": "Classification",
+    "CompletedRequestDetails": "Request Details"
   }
 }
