@@ -1,11 +1,9 @@
 name: Build and copy files
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-
-      
 
 jobs:
   build:
@@ -15,9 +13,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-          
+
       - name: Set CI environment variable
-        run: echo "CI=false" >> $GITHUB_ENV 
+        run: echo "CI=false" >> $GITHUB_ENV
 
       # Setup frontend
       - name: Install all dependencies
