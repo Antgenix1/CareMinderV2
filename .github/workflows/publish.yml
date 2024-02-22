@@ -1,6 +1,9 @@
 name: Build and copy files
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
