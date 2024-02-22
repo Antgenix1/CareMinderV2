@@ -1,4 +1,4 @@
-name: Build and copy files
+name: build
 
 on:
   push:
