@@ -62,6 +62,7 @@
 }
 .patient__home .question-container button {
   background: blue;
+
 }
 .patient__home .request-container button {
   background: var(--request);
