@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   release:
@@ -27,5 +30,3 @@ jobs:
           NEXT_VERSION=${{ steps.get_next_version.outputs.version }}
           git tag $NEXT_VERSION
           git push origin $NEXT_VERSION
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
