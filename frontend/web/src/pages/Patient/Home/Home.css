@@ -61,7 +61,7 @@
   cursor: pointer;
 }
 .patient__home .question-container button {
-  background: blue;
+  background: var(--question);
 }
 .patient__home .request-container button {
   background: var(--request);
