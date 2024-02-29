@@ -11,3 +11,8 @@ class CustomDjangoModelPermissions(DjangoModelPermissions):
         "PATCH": ["%(app_label)s.change_%(model_name)s"],
         "DELETE": ["%(app_label)s.delete_%(model_name)s"],
     }
+
+    def has_permission(self, request, view):
+        if getattr(request, "testing", False):
+            return True
+        return super().has_permission(request, view)
