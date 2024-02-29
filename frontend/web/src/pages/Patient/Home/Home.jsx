@@ -9,7 +9,7 @@ import { TbMicrophone } from "react-icons/tb";
 import PatientHistory from "src/components/PatientHistory/PatientHistory";
 
 import { useNavigate } from "react-router-dom";
-import { getSettings } from "../../../lib/api";
+import { getSettings } from "src/lib/api";
 import { useRedirectToLogin } from "src/hooks/useSession";
 
 export default function Home({ session }) {
@@ -44,7 +44,7 @@ export default function Home({ session }) {
 
   return (
     <div className="patient__home">
-      <PatientHeader session={session}/>
+      <PatientHeader session={session} />
       <main>
         <div className="patient__home container">
           <div className="menu">
@@ -75,8 +75,8 @@ export default function Home({ session }) {
           </div>
         </div>
       </main>
-      <PatientHistory session={session}/>
-      <PatientFooter session={session}/>
+      <PatientHistory session={session} />
+      <PatientFooter session={session} />
     </div>
   );
 }

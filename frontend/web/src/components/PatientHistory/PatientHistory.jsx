@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import { getRequestsFiltered, getChatMessages } from "../../lib/api";
+import { getRequestsFiltered } from "../../lib/api";
 import "./PatientHistory.css";
 import Request from "../Request/Request";
 import useLocalStorage from "src/hooks/useLocalStorage";
@@ -12,7 +12,7 @@ export default function PatientHistory({ session }) {
   const [requests, setRequests] = useState([]);
   const [notificationCount, setNotificationCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [tablet, setTablet] = useLocalStorage("tablet", {});
+  const [tablet, _] = useLocalStorage("tablet", {});
   const patient = data.patient;
 
   function handleNotificationCountChange(count) {
