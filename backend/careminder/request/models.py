@@ -1,5 +1,3 @@
-from http.client import PROCESSING
-from urllib import request
 
 from django.db import models
 from patient.models import Patient
