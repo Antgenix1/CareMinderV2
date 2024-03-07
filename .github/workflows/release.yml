@@ -1,12 +1,11 @@
 name: release
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["*"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   release:
@@ -18,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.workflow_run.head_commit.id }}
       - name: Get next version
         id: get_next_version
         uses: thenativeweb/get-next-version@main
