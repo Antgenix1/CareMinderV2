@@ -10,7 +10,6 @@ import AudioVisualizer from "src/components/AudioVisualizer/AudioVisualizer";
 import "./Recording.css";
 import { useRedirectToLogin } from "src/hooks/useSession";
 import data from "src/data.json";
-import useLocalStorage from "src/hooks/useLocalStorage";
 
 export default function Recording({ session }) {
   useRedirectToLogin(session, "/patient/login");
