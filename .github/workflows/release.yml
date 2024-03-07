@@ -2,7 +2,7 @@ name: release
 
 on:
   workflow_run:
-    workflows: ["*"]
+    workflows: ["publish", "pylint", "test"]
     branches: [main]
     types:
       - completed
