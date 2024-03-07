@@ -287,6 +287,7 @@ argument-naming-style=snake_case
 # Regular expression matching correct argument names
 argument-rgx=[a-z_][a-z0-9_]{2,30}$
 
+
 # Naming style matching correct class attribute names.
 class-attribute-naming-style=any
 
