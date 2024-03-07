@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('request', '0006_alter_chatmessage_request'),
+        ("request", "0006_alter_chatmessage_request"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='request',
-            name='for_role',
-            field=models.PositiveSmallIntegerField(choices=[(0, 'Helper'), (1, 'Nurse'), (2, 'Doctor')]),
+            model_name="request",
+            name="for_role",
+            field=models.PositiveSmallIntegerField(
+                choices=[(0, "Helper"), (1, "Nurse"), (2, "Doctor")]
+            ),
         ),
     ]

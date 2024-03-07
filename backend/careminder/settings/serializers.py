@@ -1,4 +1,3 @@
-from os import read
 from rest_framework import serializers
 from tablet.models import Tablet
 from .models import Area, Settings
