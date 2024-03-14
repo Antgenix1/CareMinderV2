@@ -27,4 +27,4 @@ jobs:
         run: docker pull ghcr.io/antgenix1/careminder:latest
 
       - name: Run the container
-        run: docker run -d -p 8080:80 ghcr.io/antgenix1/careminder:latest
+        run: docker run -p 8080:80 ghcr.io/antgenix1/careminder:latest
