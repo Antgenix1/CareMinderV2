@@ -29,4 +29,4 @@ jobs:
           context: ./frontend/web
           file: ./frontend/web/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/careminder:latest
+          tags: ghcr.io/antgenix1/careminder:latest
