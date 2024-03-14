@@ -3,11 +3,10 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { GiClick } from "react-icons/gi";
-import { useLocation } from "react-router-dom";
 import PatientFooter from "src/components/PatientFooter/PatientFooter";
 import Logo from "src/assets/logo.svg";
 import "./RecordingResult.css";
-import { getTablet, postRequest } from "src/lib/api";
+import { postRequest } from "src/lib/api";
 import useLocalStorage from "src/hooks/useLocalStorage";
 import { useRedirectToLogin } from "src/hooks/useSession";
 import data from "src/data.json";
@@ -18,11 +17,11 @@ export default function RecordingResult({ session }) {
   const patient = data.patient;
   const transcript = localStorage.getItem("recordingResult");
   const isQuestion = localStorage.getItem("isQuestion");
-  const [tablet, setTablet] = useLocalStorage("tablet", {});
+  const [tablet, _] = useLocalStorage("tablet", {});
   const [text, setText] = useState(transcript);
 
   const handleRecordAgainClick = () => {
-    handlePostRequest().then((r) => navigate("/patient/recording"));
+    handlePostRequest().then(() => navigate("/patient/recording"));
   };
 
   const handleCancelClick = () => {
@@ -30,7 +29,7 @@ export default function RecordingResult({ session }) {
   };
 
   const handleFinishClick = () => {
-    handlePostRequest().then((r) => navigate("/patient/home"));
+    handlePostRequest().then(() => navigate("/patient/home"));
   };
 
   async function handlePostRequest() {
