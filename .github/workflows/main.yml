@@ -9,11 +9,8 @@ on:
         default: 'Default value'
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       - name: Check out code
@@ -26,10 +23,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.PAT }}
 
-      - name: Build and push frontend image
-        uses: docker/build-push-action@v2
-        with:
-          context: ./frontend/web
-          file: ./frontend/web/Dockerfile
-          push: true
-          tags: ghcr.io/antgenix1/careminder:latest
+      - name: Pull the image
+        run: docker pull ghcr.io/antgenix1/careminder:latest
+
+      - name: Run the container
+        run: docker run -d -p 8080:80 ghcr.io/antgenix1/careminder:latest
