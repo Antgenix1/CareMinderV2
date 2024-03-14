@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/careminderv2/static/css/main.0eb8b372.css",
+    "main.js": "/careminderv2/static/js/main.82eb5041.js",
+    "static/js/787.6025f676.chunk.js": "/careminderv2/static/js/787.6025f676.chunk.js",
+    "static/media/NanumSquareL.ttf": "/careminderv2/static/media/NanumSquareL.ace03365daa3d33bdec6.ttf",
+    "static/media/NanumSquareB.ttf": "/careminderv2/static/media/NanumSquareB.ebe0aa17b7967cd61f16.ttf",
+    "static/media/NanumSquareEB.ttf": "/careminderv2/static/media/NanumSquareEB.e54714432fdd6e1724a7.ttf",
+    "static/media/NanumSquareR.ttf": "/careminderv2/static/media/NanumSquareR.924c33f60f994924964c.ttf",
+    "static/media/logo.svg": "/careminderv2/static/media/logo.9e2c400525a64123756b0f1a01f83102.svg",
+    "static/media/longLogo.svg": "/careminderv2/static/media/longLogo.af8f325a40879e271889790c65037254.svg",
+    "index.html": "/careminderv2/index.html",
+    "main.0eb8b372.css.map": "/careminderv2/static/css/main.0eb8b372.css.map",
+    "main.82eb5041.js.map": "/careminderv2/static/js/main.82eb5041.js.map",
+    "787.6025f676.chunk.js.map": "/careminderv2/static/js/787.6025f676.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0eb8b372.css",
+    "static/js/main.82eb5041.js"
+  ]
+}
