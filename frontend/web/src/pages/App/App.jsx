@@ -32,7 +32,7 @@ function App() {
 	return (
 		<div className="App">
 			<Routes>
-				<Route path="/" element={<Navigate to="/nurse/login" />} />
+				<Route path="/*" element={<Navigate to="/nurse/login" />} />
 
 				<Route path="/nurse/*" element={<Navigate to="/nurse/home" />} />
 				<Route path="/nurse" element={<Navigate to="/nurse/login" />} />
