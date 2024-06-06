@@ -13,6 +13,10 @@ import { useNavigate } from "react-router-dom";
 import { getSettings } from "../../../lib/api";
 import { useRedirectToLogin } from "src/hooks/useSession";
 
+import Logo from "src/assets/logo.svg";
+import { Button, Modal, Card, Stack, Placeholder } from "react-bootstrap";
+
+
 export default function Home({ session }) {
 	useRedirectToLogin(session, "/patient/login");
 	const navigate = useNavigate();
@@ -39,6 +43,11 @@ export default function Home({ session }) {
 		}
 	};
 
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 	useEffect(() => {
 		fetchSettings();
 	}, [session]);
@@ -52,6 +61,62 @@ export default function Home({ session }) {
 						<h1>{settings.hospital_title}</h1>
 						<h2>{settings.hospital_description} </h2>
 					</div>
+
+					<Button variant="primary" onClick={handleShow}>
+						Food Menu
+					</Button>
+
+					<Modal
+						show={show}
+						onHide={handleClose}
+						backdrop="static"
+						keyboard={false}
+						size="lg"
+					>
+						<Modal.Header closeButton>
+							<Modal.Title>Food Menu</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>
+							<Stack direction="horizontal" gap={3}>
+								<Card style={{ width: "18rem" }}>
+									<Card.Img variant="top" src={Logo} />
+									<Card.Body>
+										<Card.Title>Breakfast</Card.Title>
+										<Card.Text>
+											<Placeholder as={Card.Text} animation="glow">
+												<Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{" "}
+												<Placeholder xs={6} /> <Placeholder xs={8} />
+											</Placeholder>
+										</Card.Text>
+									</Card.Body>
+								</Card>
+								<Card style={{ width: "18rem" }}>
+									<Card.Img variant="top" src={Logo} />
+									<Card.Body>
+										<Card.Title>Lunch</Card.Title>
+										<Card.Text>
+											<Placeholder as={Card.Text} animation="glow">
+												<Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{" "}
+												<Placeholder xs={6} /> <Placeholder xs={8} />
+											</Placeholder>
+										</Card.Text>
+									</Card.Body>
+								</Card>
+								<Card style={{ width: "18rem" }}>
+									<Card.Img variant="top" src={Logo} />
+									<Card.Body>
+										<Card.Title>Dinner</Card.Title>
+										<Card.Text>
+											<Placeholder as={Card.Text} animation="glow">
+												<Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{" "}
+												<Placeholder xs={6} /> <Placeholder xs={8} />
+											</Placeholder>
+										</Card.Text>
+									</Card.Body>
+								</Card>
+							</Stack>
+						</Modal.Body>
+					</Modal>
 
 					<div className="rq-container">
 						<div className="question-container">
