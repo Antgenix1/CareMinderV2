@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
 import "./PatientFooter.css";
-import {getSettings} from "../../lib/api";
+import { getSettings } from "../../lib/api";
 
-export default function Footer({session}) {
+// eslint-disable-next-line react/prop-types
+export default function Footer({ session }) {
 	const [settings, setSettings] = useState([]);
 
 	const fetchSettings = async () => {
@@ -15,6 +15,8 @@ export default function Footer({session}) {
 			console.error("Error fetching data:", error);
 		}
 	};
+
+	
 
 	useEffect(() => {
 		// eslint-disable-next-line no-unused-vars

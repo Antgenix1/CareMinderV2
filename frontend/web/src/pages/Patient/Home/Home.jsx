@@ -33,6 +33,10 @@ export default function Home({ session }) {
 
 	const patient = data.patient;
 
+	const navigateToASL4ALL = () => {
+		navigate("/patient/ASL4ALL");
+	};
+
 	const fetchSettings = async () => {
 		if (!session.user) return;
 		try {
@@ -61,6 +65,11 @@ export default function Home({ session }) {
 						<h1>{settings.hospital_title}</h1>
 						<h2>{settings.hospital_description} </h2>
 					</div>
+
+
+					<button className="bg-red-600 button-left" onClick={navigateToASL4ALL}>
+        Switch to ASL
+					</button>
 
 					<Button variant="primary" onClick={handleShow}>
 						Food Menu
@@ -117,6 +126,7 @@ export default function Home({ session }) {
 							</Stack>
 						</Modal.Body>
 					</Modal>
+
 
 					<div className="rq-container">
 						<div className="question-container">

@@ -24,6 +24,7 @@ import NurseLogin from "src/pages/Nurse/Login/Login";
 import AddArea from "../Nurse/Admin/AddArea/AddArea";
 import EditArea from "../Nurse/Admin/EditArea/EditArea";
 import CompletedRequests from "../Nurse/CompletedRequest/CompletedRequests";
+import MainComponent from "../ASL4ALL/ASL4ALL";
 
 function App() {
 	const session = useSession();
@@ -101,6 +102,10 @@ function App() {
 				<Route
 					path="/patient/recording/result"
 					element={<RecordingResult session={session} />}
+				/>
+				<Route 
+					path="patient/ASL4ALL"
+					element={<MainComponent />}
 				/>
 			</Routes>
 		</div>
