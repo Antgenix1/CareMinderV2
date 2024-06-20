@@ -51,6 +51,10 @@ export default function Recording({ session }) {
 		setIsRecording(false);
 	};
 
+	const navigateToASL4ALL = () => {
+		navigate("/patient/ASL4ALL");
+	};
+
 	return (
 		<div className="recording">
 			<div className="header">
@@ -68,6 +72,9 @@ export default function Recording({ session }) {
 					<AudioVisualizer />
 				</div>
 			</div>
+			<button className="bg-red-600 button-left" onClick={navigateToASL4ALL}>
+        Switch to ASL
+			</button>
 			<h2 className="record-text">{transcript}</h2>
 			<div className="record-buttons">
 				<Link
